@@ -1,0 +1,28 @@
+
+===============================================================================
+spanish
+Usage:
+
+Input example: setport -p 345
+               setport -h
+               setport --help
+               setport -p -e PORT
+               setport --port -e -MY_PORT
+
+-h, -?,  --help     opens usage displays command information.
+-p,  --port         commands to use for declaring or calling a port.
+-e,  -e PORT        calls the default port
+-!, --about         opens about message
+-v , --version      displays current version
+
+                
+PORT            calls port number 3123
+MY_PORT         calls port number 4567
+YOUR_PORT       calls port number 7654
+
+Code 223     Invalid Input
+Code 22      Port Number Invalid
+Code 9       Invalid First Argument
+Code 0       Success
+
+===============================================================================
