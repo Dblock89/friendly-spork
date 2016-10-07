@@ -11,9 +11,9 @@ Making an alias for portsetter
 the portsetter command to setport.
 
 3. Once your in the editor at the very bottom copy and paste the text below
-alias setport='cd /home/ubuntu/workspace/;./portsetter.cpp.o'
+alias setport='cd /home/ubuntu/workspace/Portsetter/;./portsetter.cpp.o'
 while your still in the editor please copy and paste the text below too
-alias setportTest='cd /home/ubuntu/workspace/;./portsetter-tests.cpp.o'
+alias setportTest='cd /home/ubuntu/workspace/Portsetter/;./portsetter-tests.cpp.o'
 it will make it alot easier to unit test after you are done make sure to save 
 and exit the editor.
 
