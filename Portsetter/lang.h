@@ -13,7 +13,7 @@ class Lang {
     
     private:
         string _language;
-         map<string, map<string, string>> _words;
+         map<string, map<string, string> > _words;
          
     public:
         Lang();
