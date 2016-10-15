@@ -3,6 +3,7 @@
 #include <sstream>
 #include <string>
 #include <stdio.h>
+#include <cstdlib>
 #include "lang.h"
 
 using namespace std;
@@ -65,7 +66,7 @@ int main(int argc, char *args[]) {
         }
         
         if (arg.compare("-v") == 0 || arg.compare("--version") == 0) {
-            cout << __("Version ") + version<< endl;
+            cout << __("Version ") + version << endl;
             return 0;
         }
         
