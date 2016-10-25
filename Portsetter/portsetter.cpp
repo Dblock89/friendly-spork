@@ -100,8 +100,7 @@ int main(int argc, char *args[]) {
        
         if (arg.compare("-p") == 0 || arg.compare("--port") == 0) {
             
-            if (pNum.compare("-e") == 0)
-            {
+            if (pNum.compare("-e") == 0) {
                 cout << __("Listening on port ") << PORT_NUM << endl;
                 return 0;
             }
@@ -188,7 +187,7 @@ void usage() {
     string line;
     ifstream usageFile("portsetter.usage_en.txt");
     
-    if (usageFile.is_open()){
+    if (usageFile.is_open()) {
          
         while (getline(usageFile,line)) {
             
@@ -209,7 +208,7 @@ void about() {
     string line;
     ifstream aboutFile("portsetter.about_en.txt");
     
-    if (aboutFile.is_open()){
+    if (aboutFile.is_open()) {
          
         while (getline(aboutFile,line)) {
             
