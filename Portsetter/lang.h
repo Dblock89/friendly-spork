@@ -82,23 +82,19 @@ class Lang {
  
 
  
- string Lang::translate(string word){
+ string Lang::translate(string word) {
      
      string value = _words[_language][word];
      
-     if (value == "" )
-     {
+     if (value == "" ) {
        return word;   
      }
-     else
-     {
+     else {
          return value;
-         
      }
      
  }
- void Lang::setLanguage(string language)
- {
+ void Lang::setLanguage(string language) {
      _language = language;
  }
  
