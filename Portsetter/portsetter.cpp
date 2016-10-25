@@ -240,6 +240,9 @@ string getEnvLang(string locale) {
         if (locale.compare("es") == 0) {
             break;
         }
+        if (locale.compare("en") == 0){
+            break;
+        }
         else if (locale.compare("") == 0 || locale.compare(NULL) == 0 || 
         locale.compare("C") == 0|| locale.compare("C.UTF-8") == 0) {
             
