@@ -131,7 +131,7 @@ int main(int argc, char *args[]) {
         }
     }
     
-    if (argc == 4){
+    if (argc == 4) {
         
         string arg = args[1];
     	string pNum = args[2];
@@ -230,22 +230,20 @@ void invalidInputError() {
     
 }
 
-string getEnvLang(string locale)
-{
+string getEnvLang(string locale) {
+    
     string language;
     char arr[4][20] = {"LANGUAGE", "LC_ALL", "LC_MESSAGES", "LANG" };
     
-    for(int i = 0; i < 4; i++)
-    {
+    for(int i = 0; i < 4; i++) {
         locale = getenv(arr[i]);
         
-        if (locale.compare("es") == 0)
-        {
+        if (locale.compare("es") == 0) {
             break;
         }
         else if (locale.compare("") == 0 || locale.compare(NULL) == 0 || 
-        locale.compare("C") == 0|| locale.compare("C.UTF-8") == 0)
-        {
+        locale.compare("C") == 0|| locale.compare("C.UTF-8") == 0) {
+            
             cout << "Missing translation files. Using English" << endl;
             language = "en";
             locale = language;
