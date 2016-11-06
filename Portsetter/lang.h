@@ -44,25 +44,31 @@ class Lang {
      _words["es"]["               setport --help"] = 
      "                    conjunto de puertos -ayuda";
      _words["es"]["               setport -p -e PORT"] = 
-     "                    conjunto de puertos -pe -e PUERTO";
+     "                    conjunto de puertos -p -e PUERTO";
      _words["es"]["               setport --port -e -MY_PORT"] =
      "                    conjunto de puertos --puerto -e -MI_PUERTO";
+     _words["es"]["               setport -p --environment"] =
+     "                    conjunto de puertos --puertos --environment";
+     _words["es"]["               setport --port --environment"] =
+     "                    conjunto de puertos --puertos --environment";
      _words["es"]["-h, -?,  --help     opens usage displays command information."] = 
      "-hache, -?,  --ayuda       abre uso comando muestra información.";
      _words["es"]["-p,  --port         commands to use for declaring or calling a port."] = 
      "-p,  --puerto              los comandos a utilizar para declarar y llamar a un puerto.";
-     _words["es"]["-e,  -e PORT        calls the default port"] = 
+     _words["es"]["-e,  --environment [PORT]        calls the default port"] = 
      "-e,  -e PUERTO             pide el puerto por defecto";
      _words["es"]["-!, --about         opens about message"] = 
      "-!, --acerca de            se abre sobre el mensaje";
      _words["es"]["-v , --version      displays current version"] = 
      "-uve , --versión           muestra la versión actual";
-     _words["es"]["PORT            calls port number 3123"] =
-     "PUERTO                llamadas puerto número 3123";
+     _words["es"]["PORT            calls port number 3114"] =
+     "PUERTO                llamadas puerto número 3114";
      _words["es"]["MY_PORT         calls port number 4567"] =
      "MI_PUERTO             llamadas puerto número 3123";
      _words["es"]["YOUR_PORT       calls port number 7654"] =
-     "TU_PUERTO             llamadas puerto número 3123";
+     "TU_PUERTO             llamadas puerto número 7654";
+     _words["es"]["PORT_BAR_NUM    calls port number 3116"] =
+     "BAR_PUERTO             llamadas puerto número 3116";
      _words["es"]["Code 223     Invalid Input"] = 
      "Código 223     Entrada inválida";
      _words["es"]["Code 22      Port Number Invalid"] = 

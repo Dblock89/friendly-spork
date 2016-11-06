@@ -12,13 +12,15 @@ void usage();
 void about();
 void invalidInputError();
 string getEnvLang(string);
-const int PORT_NUM = 3123;
+const int PORT_NUM = 3114; // CO5 req's - port num 3114
 const int MY_PORT_NUM = 4567;
 const int YOUR_PORT_NUM = 7654;
+const int PORT_BAR_NUM = 3116;  // CO5 req's - port bar num 3116
 const string port = "PORT";
 const string myPort = "MY_PORT";
 const string yourPort = "YOUR_PORT";
-string globalLocale;
+const string portBar = "BAR";  // CO5 req's - bar env var
+string globalLocale = "en";
 
 int main(int argc, char *args[]) {
     
@@ -26,7 +28,6 @@ int main(int argc, char *args[]) {
     Lang lang;
     
     lang.setLanguage(getEnvLang(globalLocale));
-    
     
     if ( argc == 1) {
         
@@ -100,7 +101,8 @@ int main(int argc, char *args[]) {
        
         if (arg.compare("-p") == 0 || arg.compare("--port") == 0) {
             
-            if (pNum.compare("-e") == 0) {
+            //Added implementation for --environment
+            if ((pNum.compare("-e") == 0) || (pNum.compare("--environment") == 0)) {
                 cout << __("Listening on port ") << PORT_NUM << endl;
                 return 0;
             }
@@ -145,8 +147,8 @@ int main(int argc, char *args[]) {
         }
        
         if (arg.compare("-p") == 0 || arg.compare("--port") == 0) {
-            
-            if (pNum.compare("-e") == 0) {
+            //Added implementation for --environment
+            if ((pNum.compare("-e") == 0) || (pNum.compare("--environment") == 0)) {
                 
                 if (setPort.compare(port) == 0) {
                     cout << __("Listening on port ") << PORT_NUM << endl;
@@ -162,6 +164,11 @@ int main(int argc, char *args[]) {
             
                 if (setPort.compare(yourPort) == 0) {
                     cout << __("Listening on port ") << YOUR_PORT_NUM << endl;
+                    return 0;
+                }
+                //Added implementation for BAR env var
+                if (setPort.compare(portBar) == 0) {
+                    cout << __("Listening on port ") << PORT_BAR_NUM << endl;
                     return 0;
                 }
                 else {
@@ -230,12 +237,14 @@ void invalidInputError() {
 }
 
 string getEnvLang(string locale) {
-    
     string language;
     char arr[4][20] = {"LANGUAGE", "LC_ALL", "LC_MESSAGES", "LANG" };
     
     for(int i = 0; i < 4; i++) {
-        locale = getenv(arr[i]);
+        //If env var is NOT null
+        if (getenv(arr[i])) {
+            locale = getenv(arr[i]);
+        }
         
         if (locale.compare("es") == 0) {
             break;
@@ -243,8 +252,9 @@ string getEnvLang(string locale) {
         if (locale.compare("en") == 0){
             break;
         }
-        else if (locale.compare("") == 0 || locale.compare(NULL) == 0 || 
-        locale.compare("C") == 0|| locale.compare("C.UTF-8") == 0) {
+        //Changed your logical operators to AND instead or OR
+        else if (locale.compare("") == 0 && locale.compare(NULL) == 0 && 
+        locale.compare("C") == 0 && locale.compare("C.UTF-8") == 0) {
             
             cout << "Missing translation files. Using English" << endl;
             language = "en";
