@@ -53,3 +53,28 @@ refer back to the steps and complete them as explained.
 type in the bash terminal setportTest and the unit testing will execute 
 printing out the results.
 
+
+CO5 - CHANGES MADE TO PROJECT, JAMES LOFORTI 
+--------------------------------------------
+(Note: all changes in .cpp files include comments)
+
+• portsetter.cpp:
+    lines: 15, 18, 22 - Constant declarations & initializations
+    lines: 105 - Added implementation for --environment
+    lines: 151 - Added implementation for --environment
+    lines: 170-172 - Added implementation for BAR env var
+    lines: 245 - Additional check to ensure env var is NOT null
+    lines: 256-257 - Changed your logical operators to AND instead or OR
+
+• portsetter-tests.cpp:
+    lines: 46-57 - Positive tests for new setport options
+    lines: 105-116 - Negative tests for new setport options
+
+• portsetter.usage_en.txt:
+    Added usage for new options
+
+• lang.h:
+    Added usage for new options in Spanish
+    
+• ReadMe.txt:
+    this

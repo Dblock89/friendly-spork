@@ -41,6 +41,21 @@ int main(int argc, char *args[]) {
     cout << endl;
     system("~/workspace/Portsetter/portsetter.cpp.o -p -e YOUR_PORT");
     cout << endl;
+    
+    //CO5 req's - Positive tests for new setport options
+    system("~/workspace/Portsetter/portsetter.cpp.o -p --environment");
+    cout << endl;
+    system("~/workspace/Portsetter/portsetter.cpp.o --port --environment");
+    cout << endl;
+    system("~/workspace/Portsetter/portsetter.cpp.o -p -e BAR");
+    cout << endl;
+    system("~/workspace/Portsetter/portsetter.cpp.o --port -e BAR");
+    cout << endl;
+    system("~/workspace/Portsetter/portsetter.cpp.o -p --environment BAR");
+    cout << endl;
+    system("~/workspace/Portsetter/portsetter.cpp.o --port --environment BAR");
+    cout << endl;
+    
     cout << "Done with positive tests." << endl;
     cout << endl;
     
@@ -85,6 +100,21 @@ int main(int argc, char *args[]) {
     cout << endl;
     system("~/workspace/Portsetter/portsetter.cpp.o -p -E");
     cout << endl;
+    
+    //CO5 req's - Negative tests for new setport options
+    system("~/workspace/Portsetter/portsetter.cpp.o -p --environ");
+    cout << endl;
+    system("~/workspace/Portsetter/portsetter.cpp.o --port --environ");
+    cout << endl;
+    system("~/workspace/Portsetter/portsetter.cpp.o -p -e YOUR_BAR");
+    cout << endl;
+    system("~/workspace/Portsetter/portsetter.cpp.o --port -e MY_BAR");
+    cout << endl;
+    system("~/workspace/Portsetter/portsetter.cpp.o -p --environment YOUR_BAR");
+    cout << endl;
+    system("~/workspace/Portsetter/portsetter.cpp.o --port --environment MY_BAR");
+    cout << endl;
+    
     cout << "Done with negative tests." << endl;
     cout << endl;
     cout << "Portsetter test completed..." << endl;
